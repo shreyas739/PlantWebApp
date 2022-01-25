@@ -1,16 +1,10 @@
 #Importing packages
 import streamlit as st
-import pandas as pd
 import numpy as np
-import math, re, os
+import os
 import tensorflow as tf
 from tensorflow import keras
-from functools import partial
-from sklearn.model_selection import train_test_split
-from tensorflow import keras
 from tensorflow.keras import layers
-from tensorflow.keras.preprocessing import image_dataset_from_directory
-from tensorflow.keras.callbacks import ModelCheckpoint
 from keras.applications.inception_v3 import InceptionV3
 import cv2 as cv
 from PIL import Image
@@ -51,7 +45,7 @@ if uploaded_file is not None:
     expanded_img = np.expand_dims(final_image,axis = 0)
     
     #loading in the model
-    model = tf.keras.models.load_model('tl_firstpass-20220121T023656Z-001/tl_firstpass')
+    model = tf.keras.models.load_model('tl_secondpass-20220125T010409Z-001/tl_secondpass')
     
     # prediction with the model
     prediction = (model.predict(expanded_img))
